@@ -69,12 +69,19 @@ def Unique(x):
     for i in range(0,len(u)):
         print("DuplicateNumbers:"+str(u[i]))
         print("RepeatNumber:"+str(indices[i]))
+
+
 def MaxNumber(x):
     print("MaxNumber:"+str(np.amax(x)))
+    
+
 def MeanNumber(x):
     print("MeanNumber:"+str(np.mean(x)))
+    
+
 def TestRun(RunNumber):
     for i in range(0,RunNumber):
         input=CompareLastnumber()
         input=CompareFB(input)
         print(input)
+        
