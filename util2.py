@@ -44,7 +44,6 @@ def Test0214_3(json1,json2,number):
 def Test0214_2(json_3):
     box=[]
     box2=[]
-    parentX1=[]
     parentX2=[]
     parentX3_1=[]
     with open(json_3, 'r') as f:
