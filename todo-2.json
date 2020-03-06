@@ -1,0 +1,38 @@
+[
+  {
+    "title":"Breaststroke kicking practice",
+    "category":"Swimming",
+    "tag":"Breaststroke, Swimming",
+    "completed":"false"
+  },
+  {
+    "title":"Computer Lab",
+    "category":"Lab",
+    "tag":"Computer, Lab, CS",
+    "completed":"false"  
+  },
+  {
+    "title":"Data Structure",
+    "category":"Homework",
+    "tag":"Data, CS201, CS",
+    "completed":"false"
+  },
+  {
+    "title":"Automata theory",
+    "category":"Studying",
+    "tag":"Automata, CS301, CS",
+    "completed":"false"
+  },
+  {
+    "title":"Tennis team game",
+    "category":"Tennis",
+    "tag":"Tennis, Game, Sports",
+    "completed":"false"
+  },
+  {
+    "title":"Coach Tennis",
+    "category":"Tennis",
+    "tag":"Tennis, Sports",
+    "completed":"false"
+  }  
+]

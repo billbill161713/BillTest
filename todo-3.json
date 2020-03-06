@@ -1,0 +1,32 @@
+[
+  {
+    "title":"Studying"
+  },
+  {
+    "title":"Reading",
+    "parent":"Studying"
+  },
+  {
+    "title":"Lab",
+    "parent":"Studying"
+  },
+  {
+    "title":"Homework",
+    "parent":"Studying"
+  },
+  {
+    "title":"Group Studing",
+    "parent":"Studying"
+  },
+  {
+    "title":"Sports",
+  },
+  {
+    "title":"Swimming",
+    "parent":"Sports"
+  },
+  {
+    "title":"Tennis",
+    "parent":"Sports"
+  }
+]

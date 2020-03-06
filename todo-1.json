@@ -1,0 +1,32 @@
+[
+  {
+    "title":"Read chapter 1 ",
+    "category":"Studying",
+    "tag":"Parser, Data, CS101, CS",
+    "completed":"true"
+  },
+  {
+    "title":"Chapter 1 homework",
+    "category":"Homework",
+    "tag":"Data, Array, CS101, CS",
+    "completed":"true"  
+  },
+  {
+    "title":"Lab 101",
+    "category":"Lab",
+    "tag":"Array, Sorting, Parser, CS101, CS",
+    "completed":"false"
+  },
+  {
+    "title":"Breaststroke paractice",
+    "category":"Swimming",
+    "tag":"Swimming, Breaststroke, Sports",
+    "completed":"true"
+  },
+  {
+    "title":"Shop tennis racket",
+    "category":"Tennis",
+    "tag":"Tennis, Sports",
+    "completed":"false"
+  }
+]
