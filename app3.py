@@ -1,13 +1,20 @@
-import util3
+import util.util13 as util
+import numpy as np
 
 if __name__ == '__main__':
-    input=CompareLastnumber()
-    input=CompareFB(input)
+    global Number1,Number2,Array1,Array2
+    Number1=11
+    Number2=30
+    Array1=5
+    Array2=5
+    arrayone=np.zeros([Array1,Array2], dtype = int)
+    input=util.CompareLastnumber(arrayone,Array1,Array2,Number1,Number2)
+    input=util.CompareFB(input,Array1,Array2)
     print(input)
-    Unique(input)
+    util.Unique(input)
     print("")
-    MaxNumber(input)
+    util.MaxNumber(input)
     print("")
-    MeanNumber(input)
+    util.MeanNumber(input)
     print("")
-    TestRun(10)
+    util.TestRun(10,input,Array1,Array2,Number1,Number2)

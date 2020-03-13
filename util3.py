@@ -1,16 +1,10 @@
 import random,numpy as np
 
 
-global Number1,Number2,Array1,Array2
-Number1=11
-Number2=30
-Array1=5
-Array2=5
 
 
-def CompareLastnumber():
-    x=np.zeros([Array1,Array2], dtype = int)
-    #print(x)
+
+def CompareLastnumber(arrayone,Array1,Array2,Number1,Number2):
     y=list(range(1,Array1*Array2+1))#Draw position
     random.shuffle(y)
     z=[]#Draw number
@@ -19,21 +13,21 @@ def CompareLastnumber():
 
 
     for i in range(0,Array1*Array2):
-        x[TestInterval(y[i])-1][TestLen(y[i])-1]=z[i]
-    LastNumber(x)
-    return x
+        arrayone[TestInterval(y[i],Array2)-1][TestLen(y[i],Array2)-1]=z[i]
+    LastNumber(arrayone,Array1,Array2,Number1,Number2)
+    return arrayone
 
 
-def LastNumber(x):
-    if x[Array1-1][Array2-1]==x[Array1-1][Array2-2] or x[Array1-1][Array2-1]==x[Array1-2][Array2-1]:
-        CompareLastnumber()
+def LastNumber(arrayone,Array1,Array2,Number1,Number2):
+    if arrayone[Array1-1][Array2-1]==arrayone[Array1-1][Array2-2] or arrayone[Array1-1][Array2-1]==arrayone[Array1-2][Array2-1]:
+        CompareLastnumber(arrayone,Array1,Array2,Number1,Number2)
 
 
-def TestInterval(NumberTest):
+def TestInterval(NumberTest,Array2):
     return int(NumberTest/Array2)
 
 
-def TestLen(NumberTest):
+def TestLen(NumberTest,Array2):
     return int(NumberTest%Array2)
     
     
@@ -48,7 +42,7 @@ def SameJudgment(FrontNumber,BehindNumber):#Compare
     return BehindNumber
 
 
-def CompareFB(x):#Front and back and up and down
+def CompareFB(x,Array1,Array2):#Front and back and up and down
     for i in range(0,Array1):
         for j in range(0,Array2):
             if i<Array1-1:
@@ -79,9 +73,9 @@ def MeanNumber(x):
     print("MeanNumber:"+str(np.mean(x)))
     
 
-def TestRun(RunNumber):
+def TestRun(RunNumber,arrayone,Array1,Array2,Number1,Number2):
     for i in range(0,RunNumber):
-        input=CompareLastnumber()
-        input=CompareFB(input)
+        input=CompareLastnumber(arrayone,Array1,Array2,Number1,Number2)
+        input=CompareFB(arrayone,Array1,Array2)
         print(input)
         
