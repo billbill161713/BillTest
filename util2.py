@@ -1,13 +1,13 @@
 import json,sys
 #1
-def Test0214_3(json1,json2,number):
+def Test0214_3(json1,json2,number):#判斷是否搜尋超出範圍
     label=[]
     if number>4:
         print("excessive")
         sys.exit()
     else:
         for s in range(0,number):
-            label.append(input("input:"))
+            label.append(input("input:"))#title，category，tag，completed搜尋類別
     box=[]
     box2=[]
     box3=[]
