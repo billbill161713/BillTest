@@ -1,79 +1,80 @@
-import json,sys
-#1
-def Test0214_3(json1,json2,number):#判斷是否搜尋超出範圍
-    label=[]
-    if number>4:
-        print("excessive")
-        sys.exit()
-    else:
-        for s in range(0,number):
-            label.append(input("input:"))#title，category，tag，completed搜尋類別
-    box=[]
-    box2=[]
-    box3=[]
-    box4=[]
-    i=0
-    with open(json2, 'r') as f2:
-        data2 = json.load(f2)
-    with open(json1, 'r') as f:
-        data = json.load(f)
-    for item in data:
-        box.append(item['title'])
-        box2.append(item['category'])
-        box3.append(item['tag'])
-        box4.append(item['completed'])
-    for item2 in data2:
-        box.append(item2['title'])
-        box2.append(item2['category'])
-        box3.append(item2['tag'])
-        box4.append(item2['completed'])
-  
-    x=sorted(box)#
-    for i in range(0,len(box)):
-        for z in range(0,int(number)):
-            if label[z] =='title':
-                print('title:'+x[i])
-            if label[z] =='category':
-                print("category:"+box2[box.index(x[i])])
-            if label[z] =='tag':
-                print("tag:"+box3[box.index(x[i])])
-            if label[z] =='completed':
-                print("completed:"+box4[box.index(x[i])]+"\n")
-                    
-                    
-def Test0214_2(json_3):
-    box=[]
-    box2=[]
-    parentX2=[]
-    parentX3_1=[]
-    with open(json_3, 'r') as f:
-        data = json.load(f)
-    for item in data:
-        box.append(item['title'])
-        box2.append(item['parent'])
-    for i in range(0,len(box2)):
-        parentX2.append(box2[i])
-        parentX3_1.append(box2[i])
-        parentX3_1.append(box[i])
-        parentX3_1.append(" ")
-    print(parentX2)
+import json
+def loadJson( fileName):
+	with open("C:\\Users\\user\\Desktop\\"+fileName, 'r') as f2:
+		ret = json.load(f2)
+	return ret
+
+
+def mergeJson( json1,  json2):
+	json = json1 + json2
+	return json
+
+
+def sortTile( newJson):
+    return sorted(newJson, key=lambda k: k.get('title'))
+
+
+def DictSave( sortedList, label):
+    print( label )
+    for i in range( 0, len( sortedList )):
+        print( sortedList[ i ][ label ] )
         
-        
-        
-            
+
+def query_parameter( url):
+    idx = url.find("{")
+    query_str = url[ idx + 1 :]
+    split_str = query_str.split(",")
+    ret = {}#對應次要目錄用途
+    list_1 = ""
+    label = ""
+    Test=0 #確認無parent
+    for str in split_str:
+        split_again = str.split(":")
+        key = split_again[0]
+        value = split_again[1]
+        value = value.rstrip("}").strip().rstrip("'").lstrip("'")
+        key = key.strip().rstrip("'").lstrip("'")#過濾多餘
+        if key == "title" and label != "":
+            ret[value] = label
+        if key == "parent":
+            Test=Test+1
+            label = value     
+    if key == "title" and Test==0:
+        list_1 = value
+    
+    return list_1, ret
 
         
-            
- 
+        
+        
+
+
+def RunLen( sortedList_2):
+    list_1 = [] #主目錄
+    list_2 = {} #次要目錄位置對應
+    for sortedListLen_2 in sortedList_2:
+        list,ret = query_parameter( str( sortedListLen_2))
+        if list != "":
+            list_1.append( list)
+        else:
+            list_2 = {**list_2, **ret}
+    print("次目錄對應辭典:", list_2)
+    print("主目錄:", list_1)
+    print("目錄:")
+    for i in list_1:
+        print( i )
+        for j in list_2.keys():
+            if i == list_2[j]:
+                print("-",j)
+                
+
+        
+        
+        
+
+
 
     
-                        
 
-
-
-print("#1")
-Test0214_3('todo-1.json','todo-2.json',4)
-
-#Test0214_2('todo-3.json')
-print("#3")
-Test0214_3('todo-1.json','todo-2.json',1)
+    
+    
