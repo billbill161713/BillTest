@@ -44,5 +44,5 @@ if __name__ == '__main__':
 print("目錄:")
 for i in range(len(tree['root'])):
     print(tree['root'][i]['title'])
-    for j in range(len(tree['root'][i])):
+    for j in range(len(tree['root'][i]['children'])):
         print("-"+tree['root'][i]['children'][j]['title'])
